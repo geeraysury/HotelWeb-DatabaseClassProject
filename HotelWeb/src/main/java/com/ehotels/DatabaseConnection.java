@@ -5,11 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static final String IP_ADDRESS = "127.0.0.1";
-    private static final String DB_SERVER_PORT = "5432";
-    private static final String DB_NAME = "HotelManagement";  // Change to match your database name
-    private static final String DB_USERNAME = "postgres";  // Your PostgreSQL username
-    private static final String DB_PASSWORD = "iLoveGyubee";  // Your PostgreSQL password
+    private static final String IP_ADDRESS = System.getenv("DB_HOST") != null ? System.getenv("DB_HOST") : "db";
+    private static final String DB_SERVER_PORT = System.getenv("POSTGRES_PORT") != null ? System.getenv("POSTGRES_PORT") : "5432";
+    private static final String DB_NAME = System.getenv("POSTGRES_DB") != null ? System.getenv("POSTGRES_DB") : "ehotels";
+    private static final String DB_USERNAME = System.getenv("POSTGRES_USER") != null ? System.getenv("POSTGRES_USER") : "postgres";
+    private static final String DB_PASSWORD = System.getenv("POSTGRES_PASSWORD") != null ? System.getenv("POSTGRES_PASSWORD") : "iLoveGyubee";
+
 
     private static Connection con = null;
 
@@ -22,8 +23,16 @@ public class DatabaseConnection {
         if (con == null || con.isClosed()) {
             try {
                 Class.forName("org.postgresql.Driver");
+
+                String host = System.getenv("DB_HOST");          
+                String port = System.getenv("POSTGRES_PORT");   
+                String db   = System.getenv("POSTGRES_DB");  
+                String user = System.getenv("POSTGRES_USER");
+                String pass = System.getenv("POSTGRES_PASSWORD");
+
                 String url = "jdbc:postgresql://" + IP_ADDRESS + ":" + DB_SERVER_PORT + "/" + DB_NAME;
-                con = DriverManager.getConnection(url, DB_USERNAME, DB_PASSWORD);
+
+                con = DriverManager.getConnection(url, user, pass);
             } catch (ClassNotFoundException e) {
                 throw new SQLException("PostgreSQL Driver not found", e);
             }
