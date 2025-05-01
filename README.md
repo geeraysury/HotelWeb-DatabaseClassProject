@@ -9,7 +9,7 @@ Details about the detailed project objectives, features, etc is in CSI 2132 Proj
 2. Make sure you have Maven installed, then run:
 mvn -f HotelWeb/pom.xml clean package
 
-3. Then run:
+3. Ensure Docker Desktop is downloaded and running. Then run:
 docker-compose up --build
 
 4. Once both containers are up, go to:
