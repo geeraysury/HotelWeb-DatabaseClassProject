@@ -3,8 +3,8 @@ Details about the detailed project objectives, features, etc is in CSI 2132 Proj
 
 **How to run the project:**
 1. In your computer terminal, type:
-git clone https://github.com/geeraysury/HotelWeb-DatabaseClassProject.git
-cd HotelWeb-DatabaseClassProject
+- git clone https://github.com/geeraysury/HotelWeb-DatabaseClassProject.git
+- cd HotelWeb-DatabaseClassProject
 
 2. Make sure you have Maven installed, then run:
 mvn -f HotelWeb/pom.xml clean package
