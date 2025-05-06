@@ -1,5 +1,18 @@
-A hotel management system built with **Java Servlets**, **JSP**, **PostgreSQL**, and **Docker Compose**.
-Details about the detailed project objectives, features, etc is in CSI 2132 Project 2 Report.pdf.
+This project was developed as part of the Databases I course at the University of Ottawa.
+The goal is to simulate a real-world multi-chain hotel booking and renting platform. Customers can search for hotel rooms based on filters like location, price, capacity, and availability, and then either book or rent a room. Employees can manage room assignments, convert bookings into rentals, and perform admin tasks through a web interface.
+
+The backend handles:
+- Hotel chains, hotels, rooms, customers, and employees
+- Bookings and rentings
+- Real-time room availability
+- Referential integrity and user-defined constraints
+- Triggers, views, and indexes for performance and integrity
+
+**Technologies Used**
+Java (Servlets + JSP)
+PostgreSQL for database management
+Apache Tomcat for deployment
+Maven for project build
 
 **How to run the project:**
 1. In your computer terminal, type:
